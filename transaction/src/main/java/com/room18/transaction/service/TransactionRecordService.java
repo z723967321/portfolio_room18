@@ -12,12 +12,14 @@ import com.room18.transaction.entity.BuyStockDTO;
 import com.room18.transaction.entity.SellBondDTO;
 import com.room18.transaction.entity.SellStockDTO;
 import io.swagger.models.auth.In;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -39,8 +41,27 @@ public class TransactionRecordService {
     private BondFeignService bondFeignService;
 
 
-    public List<TransactionRecord> getAllTransactionRecords() {
-        return transactionRecordDao.findAll();
+    public List<TransactionRecordVO> getAllTransactionRecords() {
+        List<TransactionRecord> all = transactionRecordDao.findAll();
+        List<TransactionRecordVO> newList = new ArrayList<>();
+        for(TransactionRecord transactionRecord:all){
+            TransactionRecordVO transactionRecordVO = new TransactionRecordVO();
+            BeanUtils.copyProperties(transactionRecord, transactionRecordVO);
+            if(transactionRecord.getTransactionType() == 0){
+                transactionRecordVO.setTransactionTypeString("Buy");
+            }
+            else {
+                transactionRecordVO.setTransactionTypeString("Sell");
+            }
+            if(transactionRecord.getProductionType() == 0){
+                transactionRecordVO.setProductionTypeString("Stock");
+            }
+            else {
+                transactionRecordVO.setTransactionTypeString("Bond");
+            }
+            newList.add(transactionRecordVO);
+        }
+        return newList;
     }
 
     public TransactionRecord getTransactionRecordById(Long trId) {
