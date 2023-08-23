@@ -1,13 +1,12 @@
 <p>
-    <mat-toolbar color="primary">
-      <span class="example-spacer"></span>
-      <a href="./home" style="color: white; text-decoration: none;">
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>home</mat-icon>
-        </button>
-      Home</a>
-    </mat-toolbar>
-  </p>
+  <mat-toolbar color="primary">
+    <span class="example-spacer"></span>
+    <a href="./home" style="color: white; text-decoration: none;">&nbsp;Home</a>       
+    <a href="./stock" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Stock Pool</a>
+    <a href="./Bond" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Bond Pool</a>
+    <a href="./record" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Transaction Record</a>
+  </mat-toolbar>
+</p> 
   <div class="container">
       <div style="margin-top: 10px;">
           <mat-form-field>
@@ -27,9 +26,9 @@
                   <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.userId}} </td>
                 </ng-container>
   
-                <ng-container matColumnDef="transactionType">
+                <ng-container matColumnDef="transactionTypeString">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> transactionType </th>
-                  <td mat-cell *matCellDef="let row"> {{row.transactionType}} </td>
+                  <td mat-cell *matCellDef="let row"> {{row.transactionTypeString}} </td>
                 </ng-container>
   
                 <ng-container matColumnDef="numberOfTransaction">
@@ -42,9 +41,9 @@
                     <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.productionId }} </td>
                 </ng-container>
 
-                <ng-container matColumnDef="productionType">
+                <ng-container matColumnDef="productionTypeString">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> productionType </th>
-                    <td mat-cell *matCellDef="let row"> {{row.productionType }} </td>
+                    <td mat-cell *matCellDef="let row"> {{row.productionTypeString }} </td>
                 </ng-container>
                 
                 <ng-container matColumnDef="productionDetailId">

@@ -81,13 +81,13 @@
 .box .center{
     left: 250px;
     width:220px;
-    top: 0px;
+    top: 40px;
     position:absolute;   
 }
 .box .right{
     width:600px; 
-    left:550px;;
-    top:0px;
+    left:560px;;
+    top:40px;
     position:absolute;
 }
 

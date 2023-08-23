@@ -15,8 +15,8 @@ import { RecordsService } from 'src/app/services/records.service';
 })
 export class RecordComponent implements OnInit{
 
-  displayedColumns: string[] = ['trId', 'userId', 'transactionType', 'numberOfTransaction',
-          'productionId','productionType','productionDetailId',
+  displayedColumns: string[] = ['trId', 'userId', 'transactionTypeString', 'numberOfTransaction',
+          'productionId','productionTypeString','productionDetailId',
           'productionPrice','cost','remainCash','time'];
   dataSource!: MatTableDataSource<any>;
 
