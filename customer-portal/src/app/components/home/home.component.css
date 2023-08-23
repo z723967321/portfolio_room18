@@ -1,3 +1,14 @@
+/* 在组件的CSS样式文件中 */
+.mario-container {
+  background-image: url('../../../assets/background.jpg');
+  background-size: cover;
+  /* background-color: darksalmon; */
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
 .centered-text {
     display: flexbox;
     justify-content: center;
@@ -9,8 +20,8 @@
     margin: 0;
     padding: 0;
     width: 180px;
-    height: 100%;
-    background-color: #f1f1f1;
+    height: 400px;
+    
   }
   
   li a {
@@ -68,15 +79,15 @@
     position:absolute;
 }
 .box .center{
-    left: 200px;
-    width:200px;
-    top: 60px;
+    left: 250px;
+    width:220px;
+    top: 0px;
     position:absolute;   
 }
 .box .right{
     width:600px; 
-    left:400px;;
-    top:50px;
+    left:550px;;
+    top:0px;
     position:absolute;
 }
 

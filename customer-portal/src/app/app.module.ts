@@ -26,6 +26,8 @@ import { MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { MatSort, MatSortModule} from '@angular/material/sort';
 import { BuyStockDialogComponent } from './components/buy-stock-dialog/buy-stock-dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { StockHistoryComponent } from './components/stock-history/stock-history.component';
+import { RecordComponent } from './components/record/record.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BuyDialogComponent,
     SellDialogComponent,
     DialogComponent,
-    BuyStockDialogComponent
+    BuyStockDialogComponent,
+    StockHistoryComponent,
+    RecordComponent
   ],
   imports: [
     BrowserModule,

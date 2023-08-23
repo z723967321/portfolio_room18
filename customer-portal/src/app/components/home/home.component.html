@@ -7,27 +7,15 @@
 
 <body>
   <div class="box">
-    <div class="left">
-      <ul>
-        <h2 class="centered-text">Main Menu</h2>
-        <li>
-          <img src="../../assets/home.png" alt="Icon" class="home"/>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <img src="../../assets/info_personal.png" alt="Icon" class="home"/>
-          <a href="#Personal information">Personal information</a>
-        </li>
-        <li>
-          <img src="../../assets/stock.png" alt="Icon" class="stock"/>
-          <a href="../stock">Stock</a>
-        </li>
-        <li>
-          <img src="../../assets/bonds.png" alt="Icon" class="home"/>
-          <a href="#Bond">Bond</a>
-        </li>
-      </ul>
-    </div>
+    <p>
+      <mat-toolbar color="primary">
+        <span class="example-spacer"></span>
+        <a href="./home" style="color: white; text-decoration: none;">&nbsp;Home</a>       
+        <a href="./stock" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Stock Pool</a>
+        <a href="./Bond" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Bond Pool</a>
+        <a href="./record" style="color: white; text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;Transaction Record</a>
+      </mat-toolbar>
+    </p>    
     
     <div class="center">
       <app-pie-chart></app-pie-chart>

@@ -6,12 +6,15 @@
         <h2>Sell Stock</h2>
     </header>
     <p><mat-form-field>
-        <input matInput placeholder="stockId" [value]="sellproduction" readonly>
+      <mat-label>StockId</mat-label>
+      <input matInput placeholder="stockId" [value]="sellproduction" readonly>
     </mat-form-field></p>
     <p><mat-form-field>
-        <input matInput placeholder="sellAmount" [(ngModel)]="sellAmount" sellAmount="sellAmount">
+      <mat-label>SellAmount</mat-label>
+      <input matInput placeholder="sellAmount" [(ngModel)]="sellAmount" sellAmount="sellAmount">
     </mat-form-field></p>
     <p><mat-form-field>
+      <mat-label>SellPrice</mat-label>
       <input matInput placeholder="sellPrice" [(ngModel)]="sellPrice" sellAmount="sellPrice">
   </mat-form-field></p>
   </mat-dialog-content>

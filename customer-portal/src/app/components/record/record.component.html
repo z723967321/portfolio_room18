@@ -1,0 +1,87 @@
+<p>
+    <mat-toolbar color="primary">
+      <span class="example-spacer"></span>
+      <a href="./home" style="color: white; text-decoration: none;">
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+          <mat-icon>home</mat-icon>
+        </button>
+      Home</a>
+    </mat-toolbar>
+  </p>
+  <div class="container">
+      <div style="margin-top: 10px;">
+          <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+  
+                <ng-container matColumnDef="trId">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> trId </th>
+                  <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.trId}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="userId">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> userId </th>
+                  <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.userId}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="transactionType">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> transactionType </th>
+                  <td mat-cell *matCellDef="let row"> {{row.transactionType}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="numberOfTransaction">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> numberOfTransaction </th>
+                  <td mat-cell *matCellDef="let row"> {{row.numberOfTransaction }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="productionId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> productionId </th>
+                    <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.productionId }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="productionType">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> productionType </th>
+                    <td mat-cell *matCellDef="let row"> {{row.productionType }} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="productionDetailId">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> productionDetailId </th>
+                    <td mat-cell *matCellDef="let row" style="width: 10px;"> {{row.productionDetailId }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="productionPrice">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> productionPrice </th>
+                    <td mat-cell *matCellDef="let row"> {{row.productionPrice | currency}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cost">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> cost </th>
+                  <td mat-cell *matCellDef="let row"> {{row.cost | currency}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="remainCash">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> remainCash </th>
+                <td mat-cell *matCellDef="let row"> {{row.remainCash | currency}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="time">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> time </th>
+              <td mat-cell *matCellDef="let row"> {{row.time }} </td>
+          </ng-container>
+  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+  
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            </div>
+      </div>
+  </div>
+  

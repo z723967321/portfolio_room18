@@ -6,10 +6,12 @@
         <h2>Buy Stock</h2>
     </header>
     <p><mat-form-field>
-        <input matInput placeholder="ProductionId" [value]="buyproduction" readonly>
+      <mat-label>StockId</mat-label>
+      <input matInput placeholder="ProductionId" [value]="buyproduction" readonly>
     </mat-form-field></p>
     <p><mat-form-field>
-        <input matInput placeholder="buyAmount" [(ngModel)]="buyAmount" buyAmount="buyAmount">
+      <mat-label>BuyAmount</mat-label>
+      <input matInput placeholder="buyAmount" [(ngModel)]="buyAmount" buyAmount="buyAmount">
     </mat-form-field></p>
   </mat-dialog-content>
   <mat-dialog-actions align="end">

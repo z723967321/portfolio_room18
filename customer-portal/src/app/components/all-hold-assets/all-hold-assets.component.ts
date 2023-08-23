@@ -31,7 +31,7 @@ export class AllHoldAssetsComponent {
       this.dataSource = new MatTableDataSource(this.listAllHoldAssets)
     })
   }
-  displayedColumns: string[] = ['holdAssetsId', 'userId', 'productionId', 'productionTypeName','productName','productionAmount','holdingCost','income','incomeRate','action'];
+  displayedColumns: string[] = ['userId', 'productionId', 'productionTypeName','productName','productionAmount','holdingCost','income','incomeRate','action'];
 
   refreshAssets() {
     this.fetchAssets()

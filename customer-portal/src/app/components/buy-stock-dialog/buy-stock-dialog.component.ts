@@ -22,6 +22,8 @@ export class BuyStockDialogComponent {
     
   }
   stockId = this.data.stockId;
+  stockName = this.data.stockName;
+  stockPrice = this.data.stockPrice;
   buyUrl :any;
   payload :any;
 

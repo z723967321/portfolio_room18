@@ -5,6 +5,7 @@ import { AllHoldAssetsComponent } from './components/all-hold-assets/all-hold-as
 import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { StockComponent } from './components/stock/stock.component';
+import { RecordComponent } from './components/record/record.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,12 @@ const routes: Routes = [
     path: 'stock',
     title: 'stockPage',
     component:StockComponent
-  }
+  },
+  {
+    path:'record',
+    title: 'Record',
+    component:RecordComponent,
+  },
 
 ];
 
