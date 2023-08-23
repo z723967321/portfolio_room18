@@ -48,7 +48,8 @@ public class HoldAssetsService {
                     BigDecimal curValue = stockVO.getStockPrice().multiply(BigDecimal.valueOf(holdAssetsVO.getProductionAmount()));
                     BigDecimal income = curValue.subtract(holdAssets.getCost());
                     holdAssetsVO.setIncome(income);
-                    holdAssetsVO.setIncomeRate(holdAssetsVO.getHoldingCost().divide(stockVO.getStockPrice(),0, BigDecimal.ROUND_HALF_UP)
+                    holdAssetsVO.setIncomeRate(holdAssetsVO.getHoldingCost().divide(stockVO.getStockPrice(),4, BigDecimal.ROUND_HALF_UP)
+                            .subtract(BigDecimal.valueOf(1))
                             .negate()
                             .doubleValue());
                     holdAssetsVO.setProductName(stockVO.getStockName());
@@ -64,7 +65,10 @@ public class HoldAssetsService {
                     BigDecimal curValue = bondVO.getBondPrice().multiply(BigDecimal.valueOf(holdAssetsVO.getProductionAmount()));
                     BigDecimal income = curValue.subtract(holdAssets.getCost());
                     holdAssetsVO.setIncome(income);
-                    holdAssetsVO.setIncomeRate(holdAssetsVO.getHoldingCost().divide(bondVO.getBondPrice(),0, BigDecimal.ROUND_HALF_UP).negate().doubleValue());
+                    holdAssetsVO.setIncomeRate(holdAssetsVO.getHoldingCost().divide(bondVO.getBondPrice(),4, BigDecimal.ROUND_HALF_UP)
+                            .subtract(BigDecimal.valueOf(1))
+                            .negate()
+                            .doubleValue());
                     holdAssetsVO.setProductName(bondVO.getBondName());
                     holdAssetsVOList.add(holdAssetsVO);
                 }
