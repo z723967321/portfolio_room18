@@ -57,7 +57,7 @@ public class TransactionRecordService {
                 transactionRecordVO.setProductionTypeString("Stock");
             }
             else {
-                transactionRecordVO.setTransactionTypeString("Bond");
+                transactionRecordVO.setProductionTypeString("Bond");
             }
             newList.add(transactionRecordVO);
         }
